@@ -5,8 +5,8 @@ class Solution {
         int answer = 0;
         
         PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
-        for (int item : priorities) {
-            pq.offer(item);
+        for (int priority : priorities) {
+            pq.offer(priority);
         }
         
         while (!pq.isEmpty()) {
