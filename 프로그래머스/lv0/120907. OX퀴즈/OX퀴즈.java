@@ -13,7 +13,7 @@ class Solution {
         }
         return answer;
     }
-    public static boolean isCollect(String s) {
+    public boolean isCollect(String s) {
          String[] sArr = s.split(" ");
         if (sArr[1].equals("-")) {
             return Integer.valueOf(sArr[0]) - Integer.valueOf(sArr[2]) == Integer.valueOf(sArr[4]) ? true : false;
