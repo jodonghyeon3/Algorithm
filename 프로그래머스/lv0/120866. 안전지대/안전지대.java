@@ -1,9 +1,7 @@
 class Solution {
     public int solution(int[][] board) {
         int[][] boardDP = new int[board.length + 1][board[0].length + 1];
-        // if (board.length < 3 || board[0].length < 3) {
-        //     return 0;
-        // }
+    
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 if (board[i][j] == 1) {
