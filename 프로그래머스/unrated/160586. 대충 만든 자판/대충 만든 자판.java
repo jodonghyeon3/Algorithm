@@ -1,7 +1,7 @@
 import java.util.*;
 
 class Solution {
-    public static List<Integer> solution(String[] keymap, String[] targets) {
+    public int[] solution(String[] keymap, String[] targets) {
         Map<Character, Integer> map = new HashMap<>();
 
         for (int i = 0; i < keymap.length; i++) {
@@ -15,25 +15,19 @@ class Solution {
         List<Integer> result = new ArrayList<>();
 
         for (String target : targets) {
-            int totalDistance = 0;
+            int total = 0;
             for (char c : target.toCharArray()) {
                 if (map.containsKey(c)) {
-                    totalDistance += map.get(c);
+                    total += map.get(c);
                 } else {
-                    totalDistance = 0;
+                    total = 0;
                     break;
                 }
             }
-            result.add(totalDistance == 0 ? -1 : totalDistance);
+            result.add(total == 0 ? -1 : total);
         }
 
-        return result;
+        return result.stream().mapToInt(Integer::intValue).toArray();
     }
 
-    public static void main(String[] args) {
-        String[] keymap = {"AA"};
-        String[] targets = {"B"};
-
-        System.out.println(solution(keymap, targets));
-    }
 }
