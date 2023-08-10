@@ -1,19 +1,15 @@
-public class Solution {
-    public static int solution(int n, int m, int[] sections) {
-        if (sections.length == 0) {
-            return 0;
-        }
-
-        int paintings = 0;
-        int prevSection = sections[0];
-
-        for (int i = 1; i < sections.length; i++) {
-            if (sections[i] - prevSection > m) {
-                paintings++;
+class Solution {
+    public int solution(int n, int m, int[] section) {
+        
+        int max = 0;
+        int cnt = 0;
+        
+        for (int num : section) {
+            if (max <= num) {
+                max = num + m;
+                cnt++;
             }
-            prevSection = sections[i];
         }
-
-        return paintings;
+        return cnt;
     }
 }
