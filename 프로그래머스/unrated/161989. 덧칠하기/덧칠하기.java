@@ -1,15 +1,19 @@
 class Solution {
     public int solution(int n, int m, int[] section) {
+        int answer = 0;
         
-        int max = 0;
-        int cnt = 0;
+        int start = section[0];
+        answer++;
         
-        for (int num : section) {
-            if (max <= num) {
-                max = num + m;
-                cnt++;
+        for (int item : section) {
+            if (start + m > item) {
+                continue;
             }
+            
+            start = item;
+            answer++;
         }
-        return cnt;
+        
+        return answer;
     }
 }
